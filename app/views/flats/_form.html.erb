@@ -1,0 +1,11 @@
+<%= simple_form_for @flat do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.input :price_per_night %>
+  <%= f.select :number_of_guests, Flat::GUEST_NUMBER %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+<%= link_to flats_path do %>
+  <button class="btn btn_primary">Cancel</button>
+<%end%>
