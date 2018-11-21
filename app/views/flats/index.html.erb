@@ -1,0 +1,14 @@
+<h1>All our Flats</h1>
+<p>You searched for . We found 3 flats out of our 3 on our website.</p>
+
+<% @flats.each do |flat| %>
+  <h2><%= flat.name %></h2>
+  <p><%= flat.address %></p>
+  <h3><%= flat.number_of_guests%></h3>
+  <h4><%= flat.price_per_night%></h4>
+  <%= link_to "More info", flat_path(flat) %>
+  <%= link_to "Edit", edit_flat_path(flat) %>
+  <%= link_to "Remove", flat_path(flat),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<% end %>
